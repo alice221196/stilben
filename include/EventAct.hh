@@ -8,6 +8,8 @@ public:
 	EventAct();
 	 ~EventAct();
 
+	 static void StepLengthCounter(G4double SL); //функция приема значений (из шагов)
+
 	void BeginOfEventAction(const G4Event*);
 	void EndOfEventAction(const G4Event*);
 };
