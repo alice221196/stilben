@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-set(NAME Tkas6)
+set(NAME ClearProject)
 project(${NAME})
 
 #set (CMAKE_PREFIX_PATH /GEANT4/)
