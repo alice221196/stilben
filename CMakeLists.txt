@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.6)
 set(NAME ClearProject)
 project(${NAME})
 
-#set (CMAKE_PREFIX_PATH /GEANT4/)
+# set (CMAKE_PREFIX_PATH /GEANT4/) #Here should be the G4 install dir
+# set(CMAKE_PREFIX_PATH /home/student/geant4/geant4-install/) #Uncomment this on CLion
 
 option(WITH_GEANT4_UIVIS "Build project with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
