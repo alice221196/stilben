@@ -13,7 +13,7 @@
 #include <G4GeometryManager.hh>
 #include <G4UImanager.hh>
 #include "G4VUserDetectorConstruction.hh"
-#include <G4Color.hh>
+//#include <G4Color.hh>
 #include "G4VisAttributes.hh"
 //#include <G4AssemblyVolume.hh>
 
