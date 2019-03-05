@@ -30,7 +30,7 @@ G4VPhysicalVolume* Geometry::Construct(){
 	G4RotationMatrix* ZERO_RM = new G4RotationMatrix(0, 0, 0);
 	DE1_pvpl = new G4PVPlacement(ZERO_RM, DE1_vect, DE1_log, "DetEl_pvpl", world_log, 0, false, 0);
 	
-	G4VisAttributes* CWhite = new G4VisAttributes(G4Colour::G4Colour(1, 1, 1, 0.3));
+	G4VisAttributes* CWhite = new G4VisAttributes(G4Colour(1, 1, 1, 0.3));
 	DE1_log->SetVisAttributes(CWhite);
 	
     return new G4PVPlacement(0, G4ThreeVector(), world_log, "world_pvpl", 0, false, 0);
