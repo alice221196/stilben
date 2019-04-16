@@ -2,6 +2,7 @@
 #include <Geometry.hh>
 #include <Action.hh>
 #include <G4MTRunManager.hh>
+#include <QGSP_BERT_HP.hh>
 
 Loader::Loader(int argc, char **argv) {
 #ifdef G4MULTITHREADED
@@ -11,7 +12,7 @@ Loader::Loader(int argc, char **argv) {
     runManager = new G4RunManager;
 #endif
     runManager->SetUserInitialization(new Geometry());
-    runManager->SetUserInitialization(new QBBC);
+    runManager->SetUserInitialization(new QGSP_BERT_HP);
     runManager->SetUserInitialization(new Action());
     runManager->Initialize();
 #ifdef G4VIS_USE

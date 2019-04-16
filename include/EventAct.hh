@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 
 #include <G4UserEventAction.hh>
 #include "G4Event.hh"
@@ -8,8 +8,9 @@ public:
 	EventAct();
 	 ~EventAct();
 
-	 static void StepLengthCounter(G4double SL); //функция приема значений (из шагов)
 
 	void BeginOfEventAction(const G4Event*);
 	void EndOfEventAction(const G4Event*);
+	static void addParticle(char type, int count);
+	static int c_p, c_n;
 };

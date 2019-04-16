@@ -2,8 +2,10 @@
 
 PrimaryPart::PrimaryPart() {
 	GGamma = new G4ParticleGun(1);
-	GGamma->SetParticleDefinition(G4Gamma::GammaDefinition());
-	
+	//GGamma->SetParticleDefinition(G4::GammaDefinition());
+	G4ParticleDefinition *n = G4ParticleTable::GetParticleTable()->FindParticle("neutron");
+	GGamma->SetParticleDefinition(n);
+	GGamma->SetParticleEnergy((2.5)*MeV);
 	//gunMes = new GunMes(this);
 }
 
@@ -12,9 +14,9 @@ PrimaryPart::~PrimaryPart() {}
 //генерация излучения
 void PrimaryPart::GeneratePrimaries(G4Event* anEvent) {
 	
-	GGamma->SetParticleEnergy((100)*keV);
-	GGamma->SetParticlePosition(G4ThreeVector(0,0,0));
-	GGamma->SetParticleMomentumDirection(G4ThreeVector(0, 0, 1));
+	
+	GGamma->SetParticlePosition({ 0,-200 * mm,0 });
+	GGamma->SetParticleMomentumDirection({G4RandFlat::shoot(-1,1),G4RandFlat::shoot(-1,1),G4RandFlat::shoot(-1,1)});
 	GGamma->GeneratePrimaryVertex(anEvent);
 
 }
