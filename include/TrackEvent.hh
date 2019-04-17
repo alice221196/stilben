@@ -12,4 +12,5 @@ public:
 	void PostUserTrackingAction(const G4Track* track) override;
 	static int c_p, c_n;
 	static void addParticle_0(char part);
+	static void getLostEnergy(double Energy);
 };

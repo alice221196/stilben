@@ -24,8 +24,8 @@ void EventAct::BeginOfEventAction(const G4Event * EVE) {
 };
 
 void EventAct::EndOfEventAction(const G4Event *EVE) {
-	RunAct::addParticle(1, c_p);
-	if (c_n > 0) {
-		RunAct::addParticle(0, c_n);
-	}
+	//RunAct::addParticle(1, c_p);
+	//if (c_n > 0) {
+		//RunAct::addParticle(0, c_n);
+	//}
 };

@@ -10,13 +10,15 @@ void StepAct::UserSteppingAction(const G4Step* step) {
 			if (step->GetPreStepPoint()->GetMass() < 939. && step->GetPreStepPoint()->GetMass() > 938.) {
 				//G4cout << "protons: " << ++cnt_p << G4endl;
 				//TrackAction::addParticle_0(1);
-				EventAct::addParticle(1, 1);
+				lostEnergy = step->GetPreStepPoint()->GetKineticEnergy() - step->GetPostStepPoint()->GetKineticEnergy();
+				TrackAction::getLostEnergy(lostEnergy);
+				//EventAct::addParticle(1, 1);
 			}
-			if (step->GetTrack()->GetParticleDefinition()->GetParticleName() == "neutron") {
+			//if (step->GetTrack()->GetParticleDefinition()->GetParticleName() == "neutron") {
 				//G4cout << "neutrons: " << ++cnt_n << G4endl;
 				//TrackAction::addParticle_0(0);
-				EventAct::addParticle(0, 1);
-			}
+				//EventAct::addParticle(0, 1);
+			//}
 		}
 	}
 	

@@ -1,17 +1,22 @@
-#ifndef FINAL_DATAWRITER_HH
-#define FINAL_DATAWRITER_HH
+#pragma once
 
 #include <fstream>
 #include <iostream>
-#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
 
-class OutFile{
-private:
-
+class DataSaver {
 public:
-    static std::ofstream fout;
-    static void Open();
-    static void Close();
-    static void Info(std::string a);
+
+	static std::ofstream out;
+	static std::string splitter;
+
+	static void CreateFile(const std::string& filename);
+	static void OpenFile(const std::string& filename);
+	static void CloseFile();
+	static void SetSplitter(const std::string& s);
+	static std::string GetSplitter();
+	static void AddData(const std::vector<double>& data);
+	static void SaveSpectre(const std::string& filename, const std::map<double, double>& data);
 };
-#endif //FINAL_DATAWRITER_HH

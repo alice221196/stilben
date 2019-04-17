@@ -3,6 +3,7 @@
 
 #include <G4UserSteppingAction.hh>
 #include <G4Step.hh>
+#include <TrackEvent.hh>
 
 class StepAct :public G4UserSteppingAction {
 public:
@@ -12,6 +13,7 @@ public:
 	}
 	~StepAct() {}
 	void UserSteppingAction(const G4Step*);
+	double lostEnergy;
 
 private:
 	unsigned cnt_p;
